@@ -1,12 +1,14 @@
 public class MaximumSubarray {
     public int maxSubArray(int[] nums) {
-        int max = nums[0]; int val = nums[0];
+        int max = nums[0];  // first element
+        int val = nums[0];
         for(int i = 1; i< nums.length;i++)
         {
-            if(nums[i]>nums[i]+val)
+            if(nums[i]>nums[i]+val)   // check if adding an element to the subarray increases or decreases value and assign in max accordingly
                 val = nums[i];
             else
                 val = nums[i]+val;
+
             if(val>max)
                 max = val;
         }
